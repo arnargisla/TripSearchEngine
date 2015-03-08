@@ -29,7 +29,7 @@ public class TripSearch extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter writer = response.getWriter();
-		writer.println("<h2>Hello there</h2>");
+		writer.println("<html><head></head><body><h2>Hello there</h2></body></html>");
 	}
 
 	/**
