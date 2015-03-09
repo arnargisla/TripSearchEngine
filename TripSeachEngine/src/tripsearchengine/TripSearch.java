@@ -29,14 +29,21 @@ public class TripSearch extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter writer = response.getWriter();
-		writer.println("<html><head></head><body><h2>Hello there</h2></body></html>");
+		String destination = request.getParameter("destination");
+		writer.println("Your destination is " + destination);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		PrintWriter writer = response.getWriter();
+		String destination = request.getParameter("destination");
+		String departure = request.getParameter("departure");
+		String flightClass = request.getParameter("flightClass");
+		writer.println("You are departing from " + departure);
+		writer.println("Your destination is " + destination);
+		writer.println("You will fly in " + flightClass);
 	}
 
 }
