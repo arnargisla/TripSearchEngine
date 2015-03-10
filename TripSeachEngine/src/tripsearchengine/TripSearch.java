@@ -35,10 +35,12 @@ public class TripSearch extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		PrintWriter writer = response.getWriter();
+		// Context er sameiginlegt fyrir alla
 		ServletContext context = request.getServletContext();
 		
 		// put user name into session
 		if(userName != "" && userName != null){
+			// Geymir username í session
 			session.setAttribute("savedUserName", userName);
 		}
 		writer.println("max session timm" + session.getMaxInactiveInterval());
