@@ -26,7 +26,15 @@ public class TripQuery {
 		
 		FlightQuery flightQuery = new FlightQuery();
 		flightQuery.setDepartureDate(this.departureDate);
-		//.....
+		flightQuery.setReturnDate(this.returnDate);
+		flightQuery.setDepartureLocation(this.departureLocation);
+		flightQuery.setReturnLocation(this.returnLocation);
+		flightQuery.setDestinationLocation(this.destinationLocation);
+		flightQuery.setMinPrice(this.minPrice);
+		flightQuery.setMaxPrice(this.maxPrice);
+		flightQuery.setStopoverDuration(this.stopoverDuration);
+		flightQuery.setLayoverDuration(this.layoverDuration);
+		flightQuery.setFlightClass(this.flightClass);
 		FlightTrip[] flightTrip = flightQuery.executeQuery();
 		return flightTrip;
 	}
