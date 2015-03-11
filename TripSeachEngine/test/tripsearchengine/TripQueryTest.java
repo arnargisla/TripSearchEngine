@@ -1,6 +1,9 @@
 package tripsearchengine;
 
+import java.util.Date;
+
 import org.junit.*;
+
 import static org.junit.Assert.*;
 
 public class TripQueryTest {
@@ -17,13 +20,12 @@ public class TripQueryTest {
 	}
 	
 	@Test
-	public void testNotNull(){
-		assertNotNull(tripQuery);
-	}
-	
-	@Test
-	public void thisShouldFail(){
-		tripQuery = null;
-		assertNotNull(tripQuery);
+	public void testNoNullTrips(){
+		Date departureDate = new Date(2015, 2, 3);	
+		tripQuery.setDepartureDate(departureDate);
+		Trip[] trips = tripQuery.executeQuery();
+		for(int i=0; i<trips.length; i++){
+			assertNotNull(trips[i]);
+		}
 	}
 }
