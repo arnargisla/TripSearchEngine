@@ -17,6 +17,8 @@ public class TripQuery {
 	}
 	
 	public Trip[] executeQuery() {
+		FlightTrip[] flightTrips = queryFlight();
+		HotelStay[] hotelStay = queryHotels();
 		
 	}
 	
@@ -24,7 +26,7 @@ public class TripQuery {
 		FlightQuery flightQuery = new FlightQuery();
 		flightQuery.setDepartureDate(this.departureDate);
 		// ...
-		Trip[] trips = flightQuery.executeQuery();
+		return flightQuery.executeQuery();
 	}
 	
 	private HotelStay[] queryHotel() {
