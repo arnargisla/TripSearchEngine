@@ -1,6 +1,6 @@
 package tripsearchengine;
 
-//import java.util.date;
+import java.util.Date;
 
 public class TripQuery {
 	private String departureLocation;

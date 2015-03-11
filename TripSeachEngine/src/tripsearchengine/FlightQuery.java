@@ -1,5 +1,7 @@
 package tripsearchengine;
 
+import java.util.Date;
+
 public class FlightQuery {
 
 	public FlightTrip[] executeQuery(){
