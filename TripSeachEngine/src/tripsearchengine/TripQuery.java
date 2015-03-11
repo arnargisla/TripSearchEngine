@@ -1,4 +1,3 @@
-package tripsearchengine;
 
 public class TripQuery {
 	private String departureLocation;
@@ -17,16 +16,16 @@ public class TripQuery {
 	}
 	
 	public Trip[] executeQuery() {
-		FlightTrip[] flightTrips = queryFlight();
-		HotelStay[] hotelStay = queryHotels();
 		
 	}
 	
 	private FlightTrip[] queryFlight() {
-		FlightQuery flightQuery = new FlightQuery();
-		flightQuery.setDepartureDate(this.departureDate);
-		// ...
-		return flightQuery.executeQuery();
+		
+		FlightQuery flightQuery = new Flightquery();
+		flightQuery.setDepartureDate(this.departureDate)
+		.....
+		Flightrip[] flightrip = flightQuery.executeQuery();
+		return flighttrip;
 	}
 	
 	private HotelStay[] queryHotel() {
@@ -34,34 +33,35 @@ public class TripQuery {
 	}
 	
 	public setDepartureLocation(String departureLocation) {
+		this.departureLocation = departureLocation;
 		
 	}
 	
 	public setDestinationLocation(String destinationLocation) {
-		
+		this.destinationLocation = destinationLocation;
 	}
 	
 	public setReturnLocation(String returnLocation) {
-		
+		this.returnLocation = returnLocation;
 	}
 	
 	public setDepartureDate(Date departureDate) {
-		
+		this.departureDate = departureDate;
 	}
 	
 	public setReturnDate(Date returnDate) {
-		
+		this.returnDate = returnDate;
 	}
 	
 	public setMinPrice(int minPrice) {
-		
+		this.minPrice = minPrice;
 	}
 	
 	public setMaxPrice(int maxPrice) {
-
+		this.maxPrice = maxPrice;
 	}
 	
 	public setFlightClass(String flightClass) {
-		
+		this.flightClass = flightClass;
 	}
 }	
