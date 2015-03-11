@@ -10,6 +10,5 @@ public class FlightQuery {
 	
 	public void setDepartureDate(Date departureDate) {
 		// TODO Auto-generated method stub
-		
 	}
 }
