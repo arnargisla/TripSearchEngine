@@ -43,12 +43,15 @@ public class TripSearch extends HttpServlet {
 			// Geymir username í session
 			session.setAttribute("savedUserName", userName);
 		}
+		writer.println("<html><body>");
 		writer.println("max session timm" + session.getMaxInactiveInterval());
 		writer.println(" elapsed time" + (session.getLastAccessedTime()-session.getCreationTime()));
 		
 		String destination = request.getParameter("destination");
 		writer.println("Your destination is " + destination);
 		writer.println("Your user name is " + ((String) session.getAttribute("savedUserName")));
+
+		writer.println("</body></html>");
 	}
 
 	/**
@@ -59,9 +62,11 @@ public class TripSearch extends HttpServlet {
 		String destination = request.getParameter("destination");
 		String departure = request.getParameter("departure");
 		String flightClass = request.getParameter("flightClass");
+		writer.println("<html><body>");
 		writer.println("You are departing from " + departure);
 		writer.println("Your destination is " + destination);
 		writer.println("You will fly in " + flightClass);
+		writer.println("</body></html>");
 	}
 
 }
