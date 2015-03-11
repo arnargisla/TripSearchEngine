@@ -5,7 +5,11 @@ import java.util.Date;
 public class FlightQuery {
 
 	public FlightTrip[] executeQuery(){
-		return null;
+		FlightTrip[] result = new FlightTrip[10];
+		FlightTrip a = new FlightTrip();
+		result[0] = a;
+		result[1] = a;
+		return result;		
 	}
 	
 	public void setDepartureDate(Date departureDate) {
