@@ -10,5 +10,8 @@ public class Trip {
 		this.hotelStay = hotelStay;
 	}
 	
-	
+	public String getDepartureLocation() {
+		return flightTrip.departureLocation;
+		
+	}
 }

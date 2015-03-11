@@ -25,7 +25,7 @@ public class TripQuery {
 		int i = 0;
 		while(hotelStay[i] != null && flightTrip[i] != null) {
 			trip[i] = new Trip(flightTrip[i], hotelStay[i] );
-			
+			i = i + 1;
 		}
 		
 		
