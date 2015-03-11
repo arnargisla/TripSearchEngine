@@ -1,3 +1,6 @@
+package tripsearchengine;
+
+//import java.util.date;
 
 public class TripQuery {
 	private String departureLocation;
@@ -6,7 +9,7 @@ public class TripQuery {
 	private Date departureDate;
 	private Date returnDate;
 	private int minPrice;
-	private maxPrice;
+	private int maxPrice;
 	private double stopoverDuration;
 	private double layoverDuration;
 	private String flightClass;
@@ -16,52 +19,52 @@ public class TripQuery {
 	}
 	
 	public Trip[] executeQuery() {
-		
+		return null;
 	}
 	
 	private FlightTrip[] queryFlight() {
 		
-		FlightQuery flightQuery = new Flightquery();
-		flightQuery.setDepartureDate(this.departureDate)
-		.....
-		Flightrip[] flightrip = flightQuery.executeQuery();
-		return flighttrip;
+		FlightQuery flightQuery = new FlightQuery();
+		flightQuery.setDepartureDate(this.departureDate);
+		//.....
+		FlightTrip[] flightTrip = flightQuery.executeQuery();
+		return flightTrip;
 	}
 	
 	private HotelStay[] queryHotel() {
-		
+		return null;
 	}
 	
-	public setDepartureLocation(String departureLocation) {
+	public void setDepartureLocation(String departureLocation) {
 		this.departureLocation = departureLocation;
 		
 	}
 	
-	public setDestinationLocation(String destinationLocation) {
+	public void setDestinationLocation(String destinationLocation) {
 		this.destinationLocation = destinationLocation;
 	}
 	
-	public setReturnLocation(String returnLocation) {
+	public void setReturnLocation(String returnLocation) {
 		this.returnLocation = returnLocation;
 	}
 	
-	public setDepartureDate(Date departureDate) {
+	public void  setDepartureDate(Date departureDate) {
 		this.departureDate = departureDate;
 	}
 	
-	public setReturnDate(Date returnDate) {
+	public void setReturnDate(Date returnDate) {
 		this.returnDate = returnDate;
 	}
 	
-	public setMinPrice(int minPrice) {
+	public void setMinPrice(int minPrice) {
 		this.minPrice = minPrice;
 	}
 	
-	public setMaxPrice(int maxPrice) {
+	public void setMaxPrice(int maxPrice) {
 		this.maxPrice = maxPrice;
 	}
 	
-	public setFlightClass(String flightClass) {
+	public void setFlightClass(String flightClass) {
 		this.flightClass = flightClass;
 	}
 }	
