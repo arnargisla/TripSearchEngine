@@ -51,7 +51,9 @@ public class TripQuery {
 	}
 	
 	private HotelStay[] queryHotel() {
-		return null;
+		HotelQuery hotelQuery = new HotelQuery();
+		HotelStay[] hotelTrip = hotelQuery.executeQuery();
+		return hotelTrip;
 	}
 	
 	public void setDepartureLocation(String departureLocation) {
