@@ -1,9 +1,9 @@
 package tripsearchengine;
 
-public class HotelStay {
+public class MockHotelStay implements HotelStayI {
 	public String hotel;
 	
-	public HotelStay() {
+	public MockHotelStay() {
 		this.hotel = "Hotel Holt";
 	}
 }

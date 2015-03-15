@@ -2,11 +2,11 @@ package tripsearchengine;
 
 import java.util.Date;
 
-public class FlightQuery {
+public class MockFlightQuery implements FlightQueryI {
 
-	public FlightTrip[] executeQuery(){
-		FlightTrip[] result = new FlightTrip[10];
-		FlightTrip a = new FlightTrip();
+	public FlightTripI[] executeQuery(){
+		FlightTripI[] result = new MockFlightTrip[10];
+		FlightTripI a = new MockFlightTrip();
 		result[0] = a;
 		result[1] = a;
 		return result;		

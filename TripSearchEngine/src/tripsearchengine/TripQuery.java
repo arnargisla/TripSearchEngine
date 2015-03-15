@@ -14,14 +14,18 @@ public class TripQuery {
 	private double layoverDuration;
 	private String flightClass;
 	
-	public TripQuery() {
+	private FlightQueryI flightQuery;
+	private HotelQueryI hotelQuery;
 	
+	public TripQuery(FlightQueryI flightQuery, HotelQueryI hotelQuery) {
+		this.flightQuery = flightQuery;
+		this.hotelQuery = hotelQuery;
 	}
 	
 	public Trip[] executeQuery() {
 		Trip[] trip = new Trip[15];
-		FlightTrip[] flightTrip = queryFlight();
-		HotelStay[] hotelStay = queryHotel();
+		FlightTripI[] flightTrip = queryFlight();
+		HotelStayI[] hotelStay = queryHotel();
 		int i = 0;
 		while(hotelStay[i] != null && flightTrip[i] != null) {
 			trip[i] = new Trip(flightTrip[i], hotelStay[i] );
@@ -33,9 +37,9 @@ public class TripQuery {
 		return trip;
 	}
 	
-	private FlightTrip[] queryFlight() {
+	private FlightTripI[] queryFlight() {
 		
-		FlightQuery flightQuery = new FlightQuery();
+		
 		//flightQuery.setDepartureDate(this.departureDate);
 		//flightQuery.setReturnDate(this.returnDate);
 		flightQuery.setDepartureLocation(this.departureLocation);
@@ -46,13 +50,13 @@ public class TripQuery {
 		//flightQuery.setStopoverDuration(this.stopoverDuration);
 	//	flightQuery.setLayoverDuration(this.layoverDuration);
 		//flightQuery.setFlightClass(this.flightClass);
-		FlightTrip[] flightTrip = flightQuery.executeQuery();
+		FlightTripI[] flightTrip = flightQuery.executeQuery();
 		return flightTrip;
 	}
 	
-	private HotelStay[] queryHotel() {
-		HotelQuery hotelQuery = new HotelQuery();
-		HotelStay[] hotelTrip = hotelQuery.executeQuery();
+	private HotelStayI[] queryHotel() {
+		
+		HotelStayI[] hotelTrip = hotelQuery.executeQuery();
 		return hotelTrip;
 	}
 	

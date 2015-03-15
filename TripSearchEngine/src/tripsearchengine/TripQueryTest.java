@@ -6,10 +6,14 @@ import static org.junit.Assert.*;
 public class TripQueryTest {
 	private TripQuery tripQuery;
 	private Trip[] tripTest = new Trip[15]; 
+	private FlightQueryI flightQuery;
+	private HotelQueryI hotelQuery;
 	
 	@Before
 	public void setUp(){
-		tripQuery = new TripQuery();
+		flightQuery = new MockFlightQuery();
+		hotelQuery = new MockHotelQuery();
+		tripQuery = new TripQuery(flightQuery, hotelQuery);
 		tripTest = tripQuery.executeQuery();
 		
 	}

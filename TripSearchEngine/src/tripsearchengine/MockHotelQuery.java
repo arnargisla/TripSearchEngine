@@ -1,10 +1,10 @@
 package tripsearchengine;
 
-public class HotelQuery {
+public class MockHotelQuery implements HotelQueryI {
 
-	public HotelStay[] executeQuery() {
-		HotelStay[] result = new HotelStay[15];
-		HotelStay a = new HotelStay();
+	public HotelStayI[] executeQuery() {
+		HotelStayI[] result = new MockHotelStay[15];
+		HotelStayI a = new MockHotelStay();
 		result[0] = a;
 		result[1] = a;
 		result[2] = a;

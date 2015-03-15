@@ -2,16 +2,16 @@ package tripsearchengine;
 
 public class Trip {
 
-	private FlightTrip flightTrip;
-	private HotelStay hotelStay;
+	private FlightTripI flightTrip;
+	private HotelStayI hotelStay;
 	
-	public Trip(FlightTrip flightTrip, HotelStay hotelStay) {
+	public Trip(FlightTripI flightTrip, HotelStayI hotelStay) {
 		this.flightTrip = flightTrip;
 		this.hotelStay = hotelStay;
 	}
 	
 	public String getDepartureLocation() {
-		return flightTrip.departureLocation;
+		return flightTrip.getDepartureLocation();
 		
 	}
 }
