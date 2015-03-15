@@ -1,6 +1,7 @@
 package tripsearchengine;
 
 import java.util.Date;
+import java.util.ArrayList;
 
 public class TripQuery {
 	private String departureLocation;
@@ -22,19 +23,20 @@ public class TripQuery {
 		this.hotelQuery = hotelQuery;
 	}
 	
-	public Trip[] executeQuery() {
-		Trip[] trip = new Trip[15];
+	public ArrayList<Trip> executeQuery() {
+		ArrayList<Trip> tripList = new ArrayList<Trip>();
 		FlightTripI[] flightTrip = queryFlight();
 		HotelStayI[] hotelStay = queryHotel();
-		int i = 0;
-		while(hotelStay[i] != null && flightTrip[i] != null) {
-			trip[i] = new Trip(flightTrip[i], hotelStay[i] );
-			i = i + 1;
+		
+		// Creates all combinations of flights and hotels
+		// with no filtering
+		for(int i=0; i<flightTrip.length; i++){
+			for(int j=0; j<hotelStay.length; j++){
+				tripList.add(new Trip(flightTrip[i], hotelStay[j]));
+			}
 		}
 		
-		
-		
-		return trip;
+		return tripList;
 	}
 	
 	private FlightTripI[] queryFlight() {
@@ -48,7 +50,7 @@ public class TripQuery {
 		//flightQuery.setMinPrice(this.minPrice);
 		//flightQuery.setMaxPrice(this.maxPrice);
 		//flightQuery.setStopoverDuration(this.stopoverDuration);
-	//	flightQuery.setLayoverDuration(this.layoverDuration);
+	    //flightQuery.setLayoverDuration(this.layoverDuration);
 		//flightQuery.setFlightClass(this.flightClass);
 		FlightTripI[] flightTrip = flightQuery.executeQuery();
 		return flightTrip;

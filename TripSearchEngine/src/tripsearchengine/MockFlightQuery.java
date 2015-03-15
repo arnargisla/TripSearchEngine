@@ -5,7 +5,7 @@ import java.util.Date;
 public class MockFlightQuery implements FlightQueryI {
 
 	public FlightTripI[] executeQuery(){
-		FlightTripI[] result = new MockFlightTrip[10];
+		FlightTripI[] result = new MockFlightTrip[2];
 		FlightTripI a = new MockFlightTrip();
 		result[0] = a;
 		result[1] = a;

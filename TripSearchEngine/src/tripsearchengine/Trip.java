@@ -1,7 +1,8 @@
 package tripsearchengine;
 
 public class Trip {
-
+	// Þessi klasi er tilbúinn, held ég
+	
 	private FlightTripI flightTrip;
 	private HotelStayI hotelStay;
 	
@@ -10,8 +11,12 @@ public class Trip {
 		this.hotelStay = hotelStay;
 	}
 	
-	public String getDepartureLocation() {
-		return flightTrip.getDepartureLocation();
-		
+	public FlightTripI getFlightTrip(){
+		return flightTrip;
 	}
+	
+	public HotelStayI getHotelStay(){
+		return hotelStay;
+	}
+	
 }

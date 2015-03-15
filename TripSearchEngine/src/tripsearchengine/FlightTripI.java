@@ -6,5 +6,5 @@ public interface FlightTripI {
 
 	public abstract String getDepartureLocation();
 
-	
+
 }
