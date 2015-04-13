@@ -3,8 +3,8 @@ package HotelSearchEngine;
 
 import java.sql.*;
 import java.util.Date;
-import java.text.*;
 import java.util.*;
+
 
 
 /**
@@ -21,6 +21,7 @@ public class HotelManagement {
 
 
     public HotelStay[] search(SearchQuery searchObject) {
+        HotelStay[] improvedHotelStay = null;
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:Hotels.db");
 
@@ -95,10 +96,19 @@ public class HotelManagement {
 
             }
 
-            /*for(int i = 0; i < numResults; i++){
-                boolean inOrOut = checkDates(hotelStays[i]);
+            List<HotelStay> myList = new ArrayList<HotelStay>();
+
+            for(int i = 0; i < hotelStays.length; i++){
+                boolean inOrOut = checkDates(hotelStays[i], hotelStays[i].getRooms());
+                if(inOrOut){
+                    myList.add(hotelStays[i]);
+                }
             }
-            */
+
+            improvedHotelStay = new HotelStay[myList.size()];
+            for(int z = 0; z < myList.size(); z++){
+                improvedHotelStay[z] = myList.get(z);
+            }
 
             prepStmt.close();
             connection.close();
@@ -107,7 +117,7 @@ public class HotelManagement {
             System.exit(0);
         }
 
-        return hotelStays;
+        return improvedHotelStay;
     }
 
     public static String dateToString( Date date )
@@ -124,36 +134,36 @@ public class HotelManagement {
         return b.toString();
     }
 
-    public boolean checkDates(HotelStay hs){
+    public boolean checkDates(HotelStay hs, int numrooms){
+
         String checkin = dateToString(hs.getCheckInTime());
         String checkout = dateToString(hs.getCheckOutTime());
 
-        String inyear = checkin.substring(0,4);
-        String inmonth = checkin.substring(4,6);
-        String inday = checkin.substring(6,8);
-
-        while(true){
-            int checkIn = Integer.parseInt(checkin);
-        }
+        boolean canIcheckIn = true;
 
 
-
-        /*try{
-            String selectStatement1 = "SELECT date FROM Available WHERE ? <= date AND date <= ?";
+        try{
+            String selectStatement1 = "SELECT * FROM Available WHERE ? <= date AND date <= ? AND hotel = ?";
             PreparedStatement prepStmt1 = connection.prepareStatement(selectStatement1);
             prepStmt1.setString(1, checkin);
             prepStmt1.setString(2, checkout);
+            prepStmt1.setString(3, hs.getHotelName());
             ResultSet rs = prepStmt1.executeQuery();
+
             while(rs.next()){
+                int roomsavail = rs.getInt("roomsAvail");
+                if(roomsavail < numrooms){
+                    canIcheckIn = false;
+                }
 
             }
-        }catch(Exception e){
+        }
 
-        }*/
+        catch(Exception e){
 
-        //for(){
-        	//Todo
-        //}
+        }
+
+        return canIcheckIn;
     }
 
 
@@ -210,12 +220,14 @@ public class HotelManagement {
 
     public static void main(String[] args) {
 
+        /*
+
         HotelManagement manager = new HotelManagement();
         Date chkin = new Date(2015-1900, 04, 13);
         Date chkout = new Date(2015-1900, 04, 20);
-        manager.mysearchQuery = new SearchQuery("Reykjavík", 5, chkin, chkout);
+        manager.mysearchQuery = new SearchQuery("Reykjavík", 11, chkin, chkout);
         manager.mysearchQuery.setRating(3);
-        manager.mysearchQuery.setHotelName("Grand");
+        //manager.mysearchQuery.setHotelName("Grand");
         manager.mysearchQuery.setWiFi("yes");
 
         HotelStay[] myhs;
@@ -237,7 +249,7 @@ public class HotelManagement {
         test = manager.bookRoom(myhs[0], manager.book);
         System.out.println(test);
 
-
+        */
         /*
         String[] hotels = {
                 "Grand",
@@ -245,7 +257,7 @@ public class HotelManagement {
                 "Central",
                 "Loftleiðir",
                 "Holt",
-                "Hótel �?safjörður",
+                "Hótel Ísafjörður",
                 "Hótel Egill",
                 "Hótel Saga",
                 "Hótel KEA",
