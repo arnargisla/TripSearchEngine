@@ -181,9 +181,27 @@ public class HotelManagement {
             String hotelid = theRoomToBook.getHotelName();
             int totPrice = theRoomToBook.getTotalPrice();
 
-
             String checkin = dateToString(theRoomToBook.getCheckInTime());
             String checkout = dateToString(theRoomToBook.getCheckOutTime());
+
+            String selectStatement1 = "SELECT * FROM Available WHERE ? <= date AND date <= ? AND hotel = ?";
+            PreparedStatement prepStmt1 = connection.prepareStatement(selectStatement1);
+            prepStmt1.setString(1, checkin);
+            prepStmt1.setString(2, checkout);
+            prepStmt1.setString(3, theRoomToBook.getHotelName());
+            ResultSet rs = prepStmt1.executeQuery();
+
+
+            while(rs.next()){
+                String updateStatement = "UPDATE Available set roomsAvail = ? WHERE  date = ? AND hotel = ?";
+                PreparedStatement updatePrep = connection.prepareStatement(updateStatement);
+                int difference = rs.getInt("roomsAvail") - numrooms;
+                updatePrep.setInt(1, difference);
+                updatePrep.setString(2, rs.getString("date"));
+                updatePrep.setString(3, theRoomToBook.getHotelName());
+                updatePrep.executeUpdate();
+            }
+
 
 
 
@@ -220,8 +238,8 @@ public class HotelManagement {
 
     public static void main(String[] args) {
 
-        /*
 
+        /*
         HotelManagement manager = new HotelManagement();
         Date chkin = new Date(2015-1900, 04, 13);
         Date chkout = new Date(2015-1900, 04, 20);
