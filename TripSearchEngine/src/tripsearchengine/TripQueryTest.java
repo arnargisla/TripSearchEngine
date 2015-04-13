@@ -77,5 +77,6 @@ public class TripQueryTest {
 			assertTrue(departureDate.before(t.getHotelStay().getCheckInTime()));
 		}
 	}
+
 }
 

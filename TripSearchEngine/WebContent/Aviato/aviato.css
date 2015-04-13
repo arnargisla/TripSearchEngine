@@ -1,0 +1,227 @@
+body{
+	background-color: #acd2ec;
+}
+p{
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+#logo{
+	border-radius: 20px 20px 0 0;
+	height: 200px;
+	background-image: url("aviato.jpg");
+	background-size: 540px;
+	background-color: #2765b0;
+    background-repeat: no-repeat;
+    background-position: center 0; 
+}
+
+#wrapper{
+	background-color: none;
+	margin: auto;
+	width: 1000px;
+}
+
+#wrapper2{
+	border-radius: 0 0 25px 25px;
+	padding-bottom: 35px;
+	background-color: #2765b0;
+}
+
+
+
+
+#content-head{
+	min-height: 1px;
+	text-align: center;
+	font-size: 40pt;
+	color: white;
+	margin: auto;
+	width: 850px;
+}
+#trip{
+	font-family: Franklin Gothic Medium, Franklin Gothic, ITC Franklin Gothic, Arial, sans-serif;
+	margin: 15px auto 0 auto;
+	width: 850px;
+}
+
+
+#trip-header{
+	border-radius: 20px 20px 0 0;
+	height: 25px;
+	padding: 5px 0 0 30px;
+	color: white;
+	background-color: rgba(255, 255, 255, 0.31);
+}
+#trip-body{
+	background-color: white;
+}
+#trip-body-top{
+	overflow: hidden;
+}
+#trip-body-top-flight1-wrapper{
+	padding-top: 10px;
+	float: left;
+	width: 50%;
+	background-color: white;
+}
+#trip-body-top-flight2-wrapper{
+	padding-top: 10px;
+	float: right;
+	width: 50%;
+	background-color: white;
+}
+#trip-body-top-flight1{
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px #B2B2B2;
+    height: 200px;
+    margin: 0 5px 20px 10px;
+}
+#trip-body-top-flight1::after {
+    background-color: #F2F2F2;
+    box-shadow: 2px 2px rgba( 178, 178, 178, .4 );
+    content: "\00a0";
+    display: block;
+    height: 20px;
+    left: 51%;
+    position: relative;
+    transform: rotate( 45deg );
+    width:  20px;
+	top: calc(100% - 12px);
+}
+#trip-body-top-flight2{
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px #B2B2B2;
+    height: 200px;
+    margin: 0 10px 20px 5px;
+}
+
+#trip-body-top-flight2::after {
+    background-color: #F2F2F2;
+    box-shadow: 2px 2px rgba( 178, 178, 178, .4 );
+    content: "\00a0";
+    display: block;
+    height: 20px;
+    left: 41%;
+    position: relative;
+    transform: rotate( 45deg );
+    width:  20px;
+	top: calc(100% - 12px);
+}
+#trip-body-middle{
+	background-image: url("trip-body-middle.png");
+	height: 55px;
+}
+#trip-body-bottom{}
+#trip-body-bottom-hotel-wrapper{
+	background-color: white;
+	padding-bottom: 10px;
+}
+#trip-body-bottom-hotel{
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px #B2B2B2;
+    height: 200px;
+    margin: 20px 10px 0px 10px;
+}
+#trip-body-bottom-hotel::after {
+    background-color: #F2F2F2;
+    box-shadow: 2px 2px rgba( 178, 178, 178, .4 );
+    content: "\00a0";
+    display: block;
+    height: 20px;
+    left: 48%;
+    position: relative;
+    transform: rotate( 225deg );
+    width:  20px;
+	top: -10px;
+}
+
+#trip-footer{}	
+#trip-footer-static{
+	color: white;
+	text-align: center;
+	border-radius: 0 0 20px 20px;
+	height: 25px;
+	background-color: rgba(255, 255, 255, 0.31);
+	padding-top: 5px;
+}
+#trip-footer-button{
+	color: white;
+	text-align: center;
+	border-radius: 0 0 20px 20px;
+	height: 25px;
+	background-color: rgba(255, 255, 255, 0.31);
+	padding-top: 5px;
+}
+#trip-footer-button:hover{
+	background-color: rgba(255, 255, 255, 0.41);
+}
+#trip-footer-button:active{
+	background-color: rgba(255, 255, 255, 0.21);
+}
+
+#flight-info, #hotel-info{
+	padding: 10px 10px 0 10px;
+	float:left;
+}
+
+#flight-info-title, #hotel-info-title{
+	width: 380px;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+#flight-info-text, #hotel-info-text{
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+#hotel-info-title{
+	width: 803px;
+}
+
+form{
+	margin: 0;
+	padding: 0;
+}
+
+#form-wrapper{
+	width: 90%;
+	margin: 20px auto 20px auto;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+#success-image{
+	margin: 50px auto;
+	width: 700px;
+	height: 200px;
+	background-image: url('success.png'	);
+	background-color: rgba(39, 101, 176, 0.72);
+}
+
+#right-location{
+	text-align: center;
+	padding: 6px 0 0 0;
+	width: 156px;
+	height: 55px;
+	float: right;
+}
+
+#left-location{
+	text-align: center;
+	padding: 6px 0 0 0;
+	width: 156px;
+	height: 55px;
+	float: left;
+}

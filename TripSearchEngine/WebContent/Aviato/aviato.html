@@ -1,0 +1,88 @@
+<html>
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="aviato.css">
+</head>
+	
+<body>
+
+	<div id="wrapper">
+	
+		<div id="logo"> </div>
+		<form id="book-form" action="aviatobooked.html" method="GET">
+			<div id="wrapper2"> 
+				<div id="content-head"> </div>
+				
+				
+				<div id="trip">
+					<div id="trip-header" class="noselect">Trip Suggestion</div>
+					<div id="trip-body">
+						<div id="trip-body-top">
+							<div id="trip-body-top-flight1-wrapper">
+								<div id="trip-body-top-flight1">
+									<div id="flight-info">
+										<div id="flight-info-title">Flights to Iceland</div>
+										<div id="flight-info-text">
+											Flight 1: From Berlin -> Reykjavík<br>
+											Departure date: 03/02/2015<br>
+											Departure time: 08:20. Arrival time: 11:30
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="trip-body-top-flight2-wrapper">	
+								<div id="trip-body-top-flight2">
+									<div id="flight-info">
+										<div id="flight-info-title">Flights from Iceland</div>
+										<div id="flight-info-text">
+											Flight 1: From Reykjavík -> Berlin <br>
+											Departure date: 05/02/2015 <br>
+											Departure time: 09:55. Arrival time: 13:05
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="trip-body-middle">
+							<div id="right-location">Berlin</div>
+							<div id="left-location">Berlin</div>
+						</div>
+						<div id="trip-body-bottom">
+							<div id="trip-body-bottom-hotel-wrapper">
+								<div id="trip-body-bottom-hotel">
+									<div id="hotel-info">
+										<div id="hotel-info-title">Hotel information</div>
+										<div id="hotel-info-text">
+											Location: Reykjavík <br>
+											Hilton hotel <br>
+											2 rooms booked
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="trip-footer">
+						<div id="trip-footer-button" onclick="
+							document.getElementById('input-nr').value = 1;
+							document.getElementById('submit-button').click();
+						" class="noselect">Book this trip</div>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+			
+			<input id="input-nr" type="text" name="chosenTrip" hidden>
+			<input id="submit-button" type="submit" hidden>
+		</form>
+	
+	
+	
+	</div>
+
+</body>
+
+</html>

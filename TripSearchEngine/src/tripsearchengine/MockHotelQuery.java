@@ -1,5 +1,8 @@
 package tripsearchengine;
 
+// This mock object simulates a HotelQueryI that returns three 
+// MockHotelQueryI's
+
 public class MockHotelQuery implements HotelQueryI {
 
 	public HotelStayI[] executeQuery() {

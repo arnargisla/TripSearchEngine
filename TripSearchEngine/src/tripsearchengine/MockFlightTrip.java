@@ -1,5 +1,11 @@
 package tripsearchengine;
 
+// This mock object simulates a FlightTripI that has the following features:
+//	departureLocation = "London";
+//	destinationLocation = "Ísland";
+//	returnLocation = "London";
+//	flightClass = "firstClass";
+
 public class MockFlightTrip implements FlightTripI {
 	private String departureLocation;
 	private String destinationLocation;

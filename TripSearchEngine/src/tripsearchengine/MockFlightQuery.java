@@ -2,6 +2,9 @@ package tripsearchengine;
 
 import java.util.Date;
 
+// This mock object simulates a flightQuery that returns two 
+// MockFlightTripI's
+
 public class MockFlightQuery implements FlightQueryI {
 
 	public FlightTripI[] executeQuery(){
